@@ -1,2 +1,4 @@
 #+title: Carbon Theme
 
+* Screenshot
+[[file:https://user-images.githubusercontent.com/11796018/197337479-6ab628e9-c5ca-4719-a3b1-a81f9791da7e.png]]
