@@ -42,12 +42,12 @@
       (hl "#2A2A2A")
       (lh "#0DA59B")
       (ss "#353535")
-      (kw "#EEEEEE")
-      (fn "#bfaa6b")
+      (cmt "#cc725b")
+      (fn "#EEEEEE")
       (st "#4b9e6b")
       (str "#4a95b5")
       (num "#9466a5")
-      (doc "#cc725b")
+      (doc "#bfaa6b")
       (cur "#EFEFEF")
       (pop "#272727")
       (tb "#000000"))
@@ -86,19 +86,19 @@
    `(isearch-fail                   ((t (:inverse-video t))))
 
    ;; Font Locks
-   `(font-lock-comment-face         ((t (:foreground ,doc))))
-   `(font-lock-comment-delimiter-face  ((t (:inherit font-lock-comment-face))))
+   `(font-lock-comment-face         ((t (:foreground ,cmt))))
+   `(font-lock-comment-delimiter-face  ((t (:foreground ,cmt))))
    `(font-lock-string-face          ((t (:foreground ,str))))
    `(font-lock-doc-face             ((t (:foreground ,doc))))
    `(font-lock-builtin-face         ((t ())))
    `(font-lock-type-face            ((t ())))
    `(font-lock-variable-name-face   ((t ())))
-   `(font-lock-keyword-face         ((((type tty)) (:bold t))
-                                     (((type graphic)) (:foreground ,kw))))
+   `(font-lock-keyword-face         ((t ())))
    `(font-lock-constant-face        ((t (:foreground ,st))))
    `(font-lock-function-name-face   ((t (:foreground ,fn))))
    `(font-lock-warning-face         ((t ())))
    `(font-lock-preprocessor-face    ((t ())))
+   `(font-lock-number-face          ((t (:foreground ,st))))
    `(error                          ((t (:background "red" :foreground ,fn))))
 
    `(highlight-numbers-number       ((t (:foreground ,num))))
@@ -158,6 +158,7 @@
 
    ;; Clojure
    `(clojure-character-face         ((t ())))
+   `(clojure-keyword-face         ((t (:foreground ,st))))
 
    ;; Magit
    `(magit-branch-local                ((t (:foreground ,st))))
@@ -275,7 +276,55 @@
    `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
    `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
 
-   `(embark-keybinding              ((t (:inherit font-lock-constant-face))))))
+   `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
+
+   `(tree-sitter-hl-face:type       ((t ())))
+   `(tree-sitter-hl-face:type.parameter ((t ())))
+   `(tree-sitter-hl-face:type.argument ((t ())))
+   `(tree-sitter-hl-face:type.builtin ((t ())))
+   `(tree-sitter-hl-face:type.super ((t ())))
+   `(tree-sitter-hl-face:constructor ((t ())))
+   `(tree-sitter-hl-face:variable ((t ())))
+   `(tree-sitter-hl-face:variable.parameter ((t ())))
+   `(tree-sitter-hl-face:variable.builtin ((t ())))
+   `(tree-sitter-hl-face:variable.special ((t ())))
+   `(tree-sitter-hl-face:property ((t ())))
+   `(tree-sitter-hl-face:property.definition ((t ())))
+   `(tree-sitter-hl-face:comment ((t (:foreground ,cmt))))
+   ;;
+   `(tree-sitter-hl-face:doc ((t (:foreground ,doc))))
+   `(tree-sitter-hl-face:string ((t (:foreground ,str))))
+   ;;
+   `(tree-sitter-hl-face:string.special ((t (:foreground ,str))))
+   ;;
+   `(tree-sitter-hl-face:escape ((t ())))
+   `(tree-sitter-hl-face:embedded ((t ())))
+   ;;
+   `(tree-sitter-hl-face:keyword ((t ())))
+   ;;
+   `(tree-sitter-hl-face:function ((t (:foreground ,fn))))
+   `(tree-sitter-hl-face:function.builtin ((t ())))
+   `(tree-sitter-hl-face:function.call ((t ())))
+   `(tree-sitter-hl-face:function.macro ((t ())))
+   `(tree-sitter-hl-face:function.method ((t ())))
+   `(tree-sitter-hl-face:function.method.call ((t ())))
+   `(tree-sitter-hl-face:function.special ((t ())))
+
+   `(tree-sitter-hl-face:method ((t ())))
+   `(tree-sitter-hl-face:method.call ((t ())))
+   `(tree-sitter-hl-face:operator ((t ())))
+   `(tree-sitter-hl-face:punctuation ((t ())))
+   `(tree-sitter-hl-face:punctuation.bracket ((t ())))
+   `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
+   `(tree-sitter-hl-face:punctuation.special ((t ())))
+   ;; dim
+   `(tree-sitter-hl-face:label ((t ())))
+   `(tree-sitter-hl-face:constant ((t ())))
+   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,st))))
+   ;;
+   `(tree-sitter-hl-face:number ((t (:foreground ,st))))
+   `(tree-sitter-hl-face:tag ((t ())))
+   `(tree-sitter-hl-face:attribute ((t ())))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
