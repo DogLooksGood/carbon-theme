@@ -36,8 +36,9 @@
   "Scales for headers.")
 
 (let ((bg "#202020")
-      (fg "#A0A0A0")
-      (cm "#707070")
+      (kw "#8E8E8E")
+      (fg "#AFAFAF")
+      (dim "#707070")
       (rg "#024347")
       (hl "#2A2A2A")
       (lh "#0DA59B")
@@ -65,10 +66,10 @@
    `(highlight                      ((t (:inverse-video t))))
    `(button                         ((t (:box (:line-width (-1 . -1))))))
    `(vertical-border                ((t ())))
-   `(window-divider                 ((t (:foreground ,cm))))
-   `(window-divider-first-pixel     ((t (:foreground ,cm))))
-   `(window-divider-last-pixel      ((t (:foreground ,cm))))
-   `(line-number                    ((t (:foreground ,cm))))
+   `(window-divider                 ((t (:foreground ,dim))))
+   `(window-divider-first-pixel     ((t (:foreground ,dim))))
+   `(window-divider-last-pixel      ((t (:foreground ,dim))))
+   `(line-number                    ((t (:foreground ,dim))))
    `(line-number-current-line       ((t (:foreground ,fn :background ,hl))))
    `(completions-common-part        ((t ())))
    `(minibuffer-prompt              ((t ())))
@@ -79,7 +80,7 @@
    `(match                          ((t (:inverse-video t))))
    `(secondary-selection            ((t (:background ,ss :extend nil))))
    `(help-key-binding               ((t (:bold t))))
-   `(shadow                         ((t (:foreground ,cm))))
+   `(shadow                         ((t (:foreground ,dim))))
 
    ;; ISearch
    `(isearch                        ((t (:inverse-video t))))
@@ -93,7 +94,7 @@
    `(font-lock-builtin-face         ((t ())))
    `(font-lock-type-face            ((t ())))
    `(font-lock-variable-name-face   ((t ())))
-   `(font-lock-keyword-face         ((t ())))
+   `(font-lock-keyword-face         ((t (:foreground ,kw))))
    `(font-lock-constant-face        ((t (:foreground ,st))))
    `(font-lock-function-name-face   ((t (:foreground ,fn))))
    `(font-lock-warning-face         ((t ())))
@@ -113,7 +114,7 @@
    ;; Mode Line
    `(tab-line                       ((t ())))
    `(mode-line                      ((t (:background ,fg :foreground ,bg))))
-   `(mode-line-inactive             ((t (:background ,cm :foreground ,hl))))
+   `(mode-line-inactive             ((t (:background ,dim :foreground ,hl))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -124,7 +125,7 @@
    `(company-tooltip-search         ((t ())))
    `(company-tooltip-selection      ((t (:inverse-video t))))
    `(company-tooltip-annotation     ((t ())))
-   `(company-scrollbar-bg           ((t (:background ,cm))))
+   `(company-scrollbar-bg           ((t (:background ,dim))))
    `(company-scrollbar-fg           ((t (:background ,fg))))
    `(company-template-field         ((t (:inherit yas-field-highlight-face))))
 
@@ -179,7 +180,7 @@
    ;; `(smerge-lower                   ((t (:background "#173017"))))
    ;;
    ;; Diff-hl
-   `(diff-hl-insert                 ((t (:foreground ,cm :background ,cm))))
+   `(diff-hl-insert                 ((t (:foreground ,dim :background ,dim))))
    `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
    `(diff-hl-delete                 ((t (:foreground ,fg :background ,fg))))
 
@@ -248,16 +249,16 @@
    ;;
    ;; ;; Treemacs
    ;; `(treemacs-root-face             ((t (:inherit font-lock-function-name-face :height 1.4 :underline t))))
-   `(fill-column-indicator          ((t (:foreground ,cm))))
+   `(fill-column-indicator          ((t (:foreground ,dim))))
    `(scroll-bar                     ((t (:foreground ,fg))))
-   `(parenthesis                    ((t (:foreground ,cm))))
+   `(parenthesis                    ((t (:foreground ,kw))))
    `(eldoc-box-body                 ((t (:background ,pop :inherit variable-pitch))))
 
-   `(flycheck-warning               ((t (:underline (:style wave :color ,cm)))))
+   `(flycheck-warning               ((t (:underline (:style wave :color ,dim)))))
    `(flycheck-error                 ((t (:underline (:style wave :color ,st)))))
    `(flymake-warning                ((t (:underline (:style wave :color ,st)))))
    `(flymake-error                  ((t (:underline (:style wave :color ,st)))))
-   `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
+   `(flymake-note                   ((t (:underline (:style wave :color ,dim)))))
 
    `(wgrep-face                     ((t (:underline ,st))))
 
@@ -273,8 +274,8 @@
 
    `(ansi-color-blue                ((t (:foreground "#169edd"))))
    `(ansi-color-bright-blue         ((t (:foreground "#169edd"))))
-   `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
-   `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
+   `(yascroll:thumb-fringe          ((t (:foreground ,dim :background ,dim))))
+   `(yascroll:thumb-text-area       ((t (:foreground ,dim :background ,dim))))
 
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
 
@@ -324,7 +325,9 @@
    ;;
    `(tree-sitter-hl-face:number ((t (:foreground ,st))))
    `(tree-sitter-hl-face:tag ((t ())))
-   `(tree-sitter-hl-face:attribute ((t ())))))
+   `(tree-sitter-hl-face:attribute ((t ())))
+   `(corfu-default ((t (:background ,pop))))
+   `(corfu-current ((t (:background ,rg))))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
