@@ -100,7 +100,7 @@
    `(font-lock-warning-face         ((t ())))
    `(font-lock-preprocessor-face    ((t ())))
    `(font-lock-number-face          ((t (:foreground ,st))))
-   `(error                          ((t (:background "red" :foreground ,fn))))
+   `(error                          ((t (:background "#3d1b14"))))
 
    `(highlight-numbers-number       ((t (:foreground ,num))))
 
