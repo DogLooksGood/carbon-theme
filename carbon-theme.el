@@ -46,13 +46,15 @@
       (cmt "#cc725b")
       (fn "#03ab28")
       (st "#008885")
-      (paren "#003d09")
+      (paren "#005d29")
       (str "#0f86c3")
       (num "#9466a5")
       (doc "#cc725b")
       (cur "#EFEFEF")
       (pop "#272727")
-      (tb "#000000"))
+      (tb "#000000")
+      (warn "#993300")
+      (err "#CC1100"))
   (custom-theme-set-faces
    `carbon
    ;; We don't specify default foreground/background in TTY.
@@ -101,7 +103,7 @@
    `(font-lock-warning-face         ((t ())))
    `(font-lock-preprocessor-face    ((t ())))
    `(font-lock-number-face          ((t (:foreground ,st))))
-   `(error                          ((t (:underline t :foreground "#FF0000"))))
+   `(error                          ((t (:foreground ,err))))
 
    `(highlight-numbers-number       ((t (:foreground ,num))))
 
@@ -256,11 +258,12 @@
    `(eldoc-box-body                 ((t (:background ,pop :inherit variable-pitch))))
 
 
-   `(lsp-flycheck-warning-unnecessary-face ((t (:underline t))))
+   `(lsp-flycheck-warning-unnecessary-face ((t (:foreground ,warn))))
+   `(lsp-flycheck-info-unnecessary-face    ((t (:foreground ,warn))))
 
-   `(flycheck-info                  ((t (:underline t :foreground "#FF00FF"))))
-   `(flycheck-warning               ((t (:underline t :foreground "#FFFF00"))))
-   `(flycheck-error                 ((t (:underline t :foreground "#FF0000"))))
+   `(flycheck-info                  ((t (:underline t :foreground ,warn))))
+   `(flycheck-warning               ((t (:underline t :foreground ,warn))))
+   `(flycheck-error                 ((t (:underline t :foreground ))))
    `(flymake-warning                ((t (:underline t :foreground "#FFFF00"))))
    `(flymake-error                  ((t (:underline t :foreground "#FF0000"))))
    `(flymake-note                   ((t (:underline (:style wave :color ,dim)))))
