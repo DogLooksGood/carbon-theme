@@ -32,9 +32,6 @@
 
 (deftheme carbon "A minimal light theme.")
 
-(defvar carbon-theme-header-scales '(1.0 1.0 1.0 1.0 1.0 1.0 1.0)
-  "Scales for headers.")
-
 (let ((bg "#202020")
       (kw "#707070")
       (fg "#A0A0A0")
@@ -223,13 +220,13 @@
    `(css-selector                   ((t ())))
    ;;
    ;; Markdown
-   `(markdown-header-face-1         ((t (:underline t :height ,(nth 0 carbon-theme-header-scales)))))
-   `(markdown-header-face-2         ((t (:underline t :height ,(nth 1 carbon-theme-header-scales)))))
-   `(markdown-header-face-3         ((t (:underline t :height ,(nth 2 carbon-theme-header-scales)))))
-   `(markdown-header-face-4         ((t (:underline t :height ,(nth 3 carbon-theme-header-scales)))))
-   `(markdown-header-face-5         ((t (:underline t :height ,(nth 4 carbon-theme-header-scales)))))
-   `(markdown-header-face-6         ((t (:underline t :height ,(nth 5 carbon-theme-header-scales)))))
-   `(markdown-header-face-7         ((t (:underline t :height ,(nth 6 carbon-theme-header-scales)))))
+   `(markdown-header-face-1         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-2         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-3         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-4         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-5         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-6         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-7         ((t (:underline t :inherit variable-pitch-text))))
    ;;
    ;; ;; Telega
    `(telega-entity-type-code        ((t ())))
@@ -238,17 +235,17 @@
    `(telega-unmuted-count           ((t ())))
    ;;
    ;; ;; Org-mode
-   `(org-document-title             ((t (:bold t :height ,(nth 0 carbon-theme-header-scales)))))
+   `(org-document-title             ((t (:bold t :inherit variable-pitch-text))))
    `(org-link                       ((t (:underline t))))
    `(org-document-title             ((t ())))
    `(org-code                       ((t (:inherit font-lock-constant-face))))
-   `(org-level-1                    ((t (:inherit font-lock-string-face :height ,(nth 0 carbon-theme-header-scales)))))
-   `(org-level-2                    ((t (:inherit font-lock-function-name-face :height ,(nth 1 carbon-theme-header-scales)))))
-   `(org-level-3                    ((t (:inherit font-lock-keyword-face :height ,(nth 2 carbon-theme-header-scales)))))
-   `(org-level-4                    ((t (:height ,(nth 3 carbon-theme-header-scales)))))
-   `(org-level-5                    ((t (:height ,(nth 4 carbon-theme-header-scales)))))
-   `(org-level-6                    ((t (:height ,(nth 5 carbon-theme-header-scales)))))
-   `(org-level-7                    ((t (:height ,(nth 6 carbon-theme-header-scales)))))
+   `(org-level-1                    ((t (:inherit font-lock-string-face :inherit variable-pitch-text))))
+   `(org-level-2                    ((t (:inherit font-lock-function-name-face :inherit variable-pitch-text))))
+   `(org-level-3                    ((t (:inherit font-lock-keyword-face :inherit variable-pitch-text))))
+   `(org-level-4                    ((t (:inherit variable-pitch-text))))
+   `(org-level-5                    ((t (:inherit variable-pitch-text))))
+   `(org-level-6                    ((t (:inherit variable-pitch-text))))
+   `(org-level-7                    ((t (:inherit variable-pitch-text))))
    ;;
    ;; ;; Treemacs
    ;; `(treemacs-root-face             ((t (:inherit font-lock-function-name-face :height 1.4 :underline t))))
@@ -335,7 +332,8 @@
    `(tree-sitter-hl-face:tag ((t ())))
    `(tree-sitter-hl-face:attribute ((t ())))
    `(corfu-default ((t (:background ,pop))))
-   `(corfu-current ((t (:background ,rg))))))
+   `(corfu-current ((t (:background ,rg))))
+   `(lsp-flycheck-info-unnecessary-face ((t (:underline (:color ,dim :style wave)))))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
