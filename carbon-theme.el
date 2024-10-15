@@ -79,7 +79,7 @@
    `(warning                        ((t ())))
    `(match                          ((t (:inverse-video t))))
    `(secondary-selection            ((t (:background ,ss :extend nil))))
-   `(help-key-binding               ((t (:bold t))))
+   `(help-key-binding               ((t ())))
    `(shadow                         ((t (:foreground ,dim))))
 
    ;; ISearch
@@ -109,12 +109,13 @@
 
    ;; IMenu
    `(imenu-list-entry-face-0          ((t ())))
-   `(imenu-list-entry-subalist-face-0 ((t (:bold t))))
+   `(imenu-list-entry-subalist-face-0 ((t ())))
 
    ;; Mode Line
    `(tab-line                       ((t ())))
    `(mode-line                      ((t (:background ,fg :foreground ,bg))))
    `(mode-line-inactive             ((t (:background ,dim :foreground ,hl))))
+   `(mode-line-buffer-id            ((t ())))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -133,11 +134,11 @@
    `(yas-field-highlight-face       ((t (:underline t))))
 
    ;; Meow
-   `(meow-beacon-indicator          ((t (:bold t))))
-   `(meow-keypad-indicator          ((t (:bold t))))
-   `(meow-insert-indicator          ((t (:bold t))))
-   `(meow-normal-indicator          ((t (:bold t))))
-   `(meow-motion-indicator          ((t (:bold t))))
+   `(meow-beacon-indicator          ((t ())))
+   `(meow-keypad-indicator          ((t ())))
+   `(meow-insert-indicator          ((t ())))
+   `(meow-normal-indicator          ((t ())))
+   `(meow-motion-indicator          ((t ())))
    `(meow-keypad-cursor             ((t (:background ,cur))))
    `(meow-insert-cursor             ((t (:background ,cur))))
    `(meow-normal-cursor             ((t (:background ,cur))))
@@ -184,7 +185,7 @@
    `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
    `(diff-hl-delete                 ((t (:foreground ,fg :background ,fg))))
 
-   `(eshell-prompt                  ((t (:bold t))))
+   `(eshell-prompt                  ((t ())))
    ;;
    ;; ;; Term
    ;; `(term-color-blue                ((t (:foreground ,blue :background ,blue))))
@@ -207,7 +208,7 @@
    `(rime-indicator-dim-face        ((t ())))
    `(rime-candidate-num-face        ((t ())))
    `(rime-comment-face              ((t ())))
-   `(rime-code-face                 ((t (:bold t))))
+   `(rime-code-face                 ((t ())))
    `(rime-default-face              ((t ())))
    `(rime-highlight-candidate-face  ((t ())))
 
@@ -235,10 +236,10 @@
    `(telega-unmuted-count           ((t ())))
    ;;
    ;; ;; Org-mode
-   `(org-document-title             ((t (:bold t :inherit variable-pitch-text))))
+   `(org-document-title             ((t (:inherit variable-pitch-text))))
    `(org-link                       ((t (:underline t))))
    `(org-document-title             ((t ())))
-   `(org-code                       ((t (:inherit font-lock-constant-face))))
+   `(org-code                       ((t (:inherit font-lock-function-name-face))))
    `(org-level-1                    ((t (:inherit font-lock-string-face :inherit variable-pitch-text))))
    `(org-level-2                    ((t (:inherit font-lock-function-name-face :inherit variable-pitch-text))))
    `(org-level-3                    ((t (:inherit font-lock-keyword-face :inherit variable-pitch-text))))
@@ -246,6 +247,10 @@
    `(org-level-5                    ((t (:inherit variable-pitch-text))))
    `(org-level-6                    ((t (:inherit variable-pitch-text))))
    `(org-level-7                    ((t (:inherit variable-pitch-text))))
+
+   `(org-visual-indent-pipe-face       ((t (:height .1 :foreground "#FFFFFF" :background "#FFFFFF"))))
+   `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground "#000000" :background "#000000"))))
+
    ;;
    ;; ;; Treemacs
    ;; `(treemacs-root-face             ((t (:inherit font-lock-function-name-face :height 1.4 :underline t))))
@@ -260,7 +265,7 @@
 
    `(flycheck-info                  ((t (:underline t :foreground ,warn))))
    `(flycheck-warning               ((t (:underline t :foreground ,warn))))
-   `(flycheck-error                 ((t (:underline t :foreground ))))
+   `(flycheck-error                 ((t (:underline t :foreground "red"))))
    `(flymake-warning                ((t (:underline t :foreground "#FFFF00"))))
    `(flymake-error                  ((t (:underline t :foreground "#FF0000"))))
    `(flymake-note                   ((t (:underline (:style wave :color ,dim)))))
@@ -274,7 +279,7 @@
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
 
    `(tab-bar                        ((t (:background ,fg :foreground ,bg))))
-   `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
+   `(tab-bar-tab                    ((t (:inverse-video t))))
    `(tab-bar-tab-inactive           ((t ())))
 
    `(ansi-color-blue                ((t (:foreground "#169edd"))))
