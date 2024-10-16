@@ -248,8 +248,8 @@
    `(org-level-6                    ((t (:inherit variable-pitch-text))))
    `(org-level-7                    ((t (:inherit variable-pitch-text))))
 
-   `(org-visual-indent-pipe-face       ((t (:height .1 :foreground "#FFFFFF" :background "#FFFFFF"))))
-   `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground "#000000" :background "#000000"))))
+   `(org-visual-indent-pipe-face       ((t (:height .1 :foreground ,fg :background ,fg))))
+   `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground ,bg :background ,bg))))
 
    ;;
    ;; ;; Treemacs
