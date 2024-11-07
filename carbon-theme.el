@@ -237,7 +237,7 @@
    `(org-document-title             ((t (:inherit variable-pitch-text))))
    `(org-link                       ((t (:underline t))))
    `(org-document-title             ((t ())))
-   `(org-code                       ((t (:bold t :height 1.6 :inherit font-lock-function-name-face))))
+   `(org-code                       ((t (:inherit font-lock-function-name-face))))
    `(org-level-1                    ((t (:bold t :height 1.5 :inherit font-lock-string-face :inherit variable-pitch-text))))
    `(org-level-2                    ((t (:bold t :height 1.4 :inherit font-lock-function-name-face :inherit variable-pitch-text))))
    `(org-level-3                    ((t (:bold t :height 1.3 :inherit font-lock-keyword-face :inherit variable-pitch-text))))
