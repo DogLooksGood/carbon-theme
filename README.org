@@ -2,8 +2,6 @@
 
 * A low contrast dark theme
 
-Most colors in this theme have the contrast between 7 and 8.
-
 Since Only necessary elements are highlighted, it's better to lower the ~treesit-font-lock-level~.
 
 #+begin_src emacs-lisp
