@@ -49,8 +49,8 @@
       (doc "#EE986A")
       (cur "#EFEFEF")
       (pop "#272727")
-      (warn "#BDBD39")
-      (err "#FD9E9E"))
+      (warn "#8B8B53")
+      (err "#EE986A"))
   (custom-theme-set-faces
    `carbon
    ;; We don't specify default foreground/background in TTY.
@@ -99,7 +99,7 @@
    `(font-lock-warning-face         ((t ())))
    `(font-lock-preprocessor-face    ((t ())))
    `(font-lock-number-face          ((t (:foreground ,st))))
-   `(error                          ((t (:foreground ,err))))
+   `(error                          ((t (:background ,err))))
 
    `(highlight-numbers-number       ((t (:foreground ,num))))
 
@@ -258,14 +258,14 @@
    `(eldoc-box-body                 ((t (:background ,pop :inherit variable-pitch))))
 
 
-   `(lsp-flycheck-warning-unnecessary-face ((t (:foreground ,warn))))
-   `(lsp-flycheck-info-unnecessary-face    ((t (:foreground ,warn))))
+   `(lsp-flycheck-warning-unnecessary-face ((t (:background ,warn))))
+   `(lsp-flycheck-info-unnecessary-face    ((t (:background ,warn))))
 
-   `(flycheck-info                  ((t (:underline t :foreground ,warn))))
-   `(flycheck-warning               ((t (:underline t :foreground ,warn))))
-   `(flycheck-error                 ((t (:underline t :foreground "red"))))
-   `(flymake-warning                ((t (:underline t :foreground "#FFFF00"))))
-   `(flymake-error                  ((t (:underline t :foreground "#FF0000"))))
+   `(flycheck-info                  ((t (:background ,warn))))
+   `(flycheck-warning               ((t (:background ,warn))))
+   `(flycheck-error                 ((t (:background ,err))))
+   `(flymake-warning                ((t (:underline (:color ,warn :style wave) ))))
+   `(flymake-error                  ((t (:underline (:color ,err :style wave)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,dim)))))
 
    `(wgrep-face                     ((t (:underline ,st))))
@@ -336,7 +336,9 @@
    `(tree-sitter-hl-face:attribute ((t ())))
    `(corfu-default ((t ())))
    `(corfu-current ((t (:inverse-video t))))
-   `(lsp-flycheck-info-unnecessary-face ((t (:underline (:color ,dim :style wave)))))))
+   `(lsp-flycheck-info-unnecessary-face ((t (:underline (:color ,dim :style wave)))))
+
+   `(eglot-mode-line ((t (:foreground ,bg))))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
