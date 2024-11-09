@@ -1,4 +1,15 @@
 #+title: Carbon Theme
 
+* A low contrast dark theme
+
+Most colors in this theme have the contrast between 7 and 8.
+
+Since Only necessary elements are highlighted, it's better to lower the ~treesit-font-lock-level~.
+
+#+begin_src emacs-lisp
+  (setq treesit-font-lock-level 2)
+#+end_src
+
 * Screenshot
-[[file:https://user-images.githubusercontent.com/11796018/197337479-6ab628e9-c5ca-4719-a3b1-a81f9791da7e.png]]
+
+[[file:https://private-user-images.githubusercontent.com/11796018/384601335-fde58ed9-a5b1-46eb-844f-10fa6c5d724d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzExNTQwMTUsIm5iZiI6MTczMTE1MzcxNSwicGF0aCI6Ii8xMTc5NjAxOC8zODQ2MDEzMzUtZmRlNThlZDktYTViMS00NmViLTg0NGYtMTBmYTZjNWQ3MjRkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTA5VDEyMDE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJjNWJlMDZiMTQyMDk4ZGE1YTg2ZGM2ZDBkYmRiNjJlMGE3M2JlNTQ0NDQyZDRkNmRhNzNhN2ZhNDgzNTliYjYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.1UMg6XeRlO3FJ8gn2eUiK25GriXgoUq-KCMcy1Bs_cw]]
