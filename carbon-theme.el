@@ -179,9 +179,9 @@
    `(smerge-lower                   ((t (:background "#173017"))))
    ;;
    ;; Diff-hl
-   `(diff-hl-insert                 ((t (:foreground ,dim :background ,dim))))
-   `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
-   `(diff-hl-delete                 ((t (:foreground ,fg :background ,fg))))
+   `(diff-hl-insert                 ((t (:foreground "#0D580D" :background "#0D580D"))))
+   `(diff-hl-change                 ((t (:foreground "#115265" :background "#115265"))))
+   `(diff-hl-delete                 ((t (:foreground "#951226" :background "#951226"))))
 
    `(eshell-prompt                  ((t ())))
    ;;
