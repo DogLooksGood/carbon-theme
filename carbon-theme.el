@@ -34,8 +34,9 @@
 
 (let ((bg "#202020")
       (kw "#8B8B53")
-      (fg "#B4B4B4")
-      (dim "#707070")
+      (fg "#C5C5C5")
+      (ml "#DCDCDC")
+      (dim "#909090")
       (rg "#B4B4B4")
       (hl "#353535")
       (lh "#d6b004")
@@ -75,7 +76,8 @@
    `(lazy-highlight                 ((t (:background ,hl :foreground ,fg))))
    `(compilation-info               ((t ())))
    `(compilation-warning            ((t ())))
-   `(warning                        ((t ())))
+   `(warning;                        ((t ()))
+     )
    `(match                          ((t (:inverse-video t))))
    `(secondary-selection            ((t (:background ,ss :extend nil))))
    `(help-key-binding               ((t ())))
@@ -99,7 +101,8 @@
    `(font-lock-warning-face         ((t ())))
    `(font-lock-preprocessor-face    ((t ())))
    `(font-lock-number-face          ((t (:foreground ,st))))
-   `(error                          ((t (:background ,err))))
+   `(warning                        ((t (:underline (:color ,warn :style wave)))))
+   `(error                          ((t (:underline (:color ,err :style wave)))))
 
    `(highlight-numbers-number       ((t (:foreground ,num))))
 
@@ -112,7 +115,7 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,fg :foreground ,bg))))
+   `(mode-line                      ((t (:background ,ml :foreground ,bg))))
    `(mode-line-inactive             ((t (:background ,dim :foreground ,hl))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
@@ -237,14 +240,27 @@
    `(org-document-title             ((t (:inherit variable-pitch-text))))
    `(org-link                       ((t (:underline t))))
    `(org-document-title             ((t ())))
-   `(org-code                       ((t (:inherit font-lock-function-name-face))))
-   `(org-level-1                    ((t (:bold t :height 1.3 :inherit font-lock-string-face :inherit variable-pitch-text))))
-   `(org-level-2                    ((t (:bold t :height 1.2 :inherit font-lock-function-name-face :inherit variable-pitch-text))))
-   `(org-level-3                    ((t (:bold t :height 1.1 :inherit font-lock-keyword-face :inherit variable-pitch-text))))
+   `(org-code                       ((t (:inherit 'fixed-pitch-serif :foreground ,fn))))
+   `(org-block                      ((t (:inherit 'fixed-pitch-serif))))
+   `(org-table                      ((t (:inherit 'fixed-pitch))))
+   `(org-checkbox                   ((t (:inherit 'fixed-pitch :background unspecified :box nil))))
+   '(org-latex-and-related          ((t (:inherit 'fixed-pitch-serif))))
+   `(org-level-1                    ((t (:bold t :inherit font-lock-string-face :inherit variable-pitch-text))))
+   `(org-level-2                    ((t (:bold t :inherit font-lock-function-name-face :inherit variable-pitch-text))))
+   `(org-level-3                    ((t (:bold t :inherit font-lock-keyword-face :inherit variable-pitch-text))))
    `(org-level-4                    ((t (:bold t :inherit variable-pitch-text))))
    `(org-level-5                    ((t (:bold t :inherit variable-pitch-text))))
    `(org-level-6                    ((t (:bold t :inherit variable-pitch-text))))
    `(org-level-7                    ((t (:bold t :inherit variable-pitch-text))))
+   `(org-indent                     ((t (:inherit (fixed-pitch org-hide)))))
+   `(org-drawer                     ((t (:foreground ,str))))
+   `(org-todo                       ((t (:foreground ,fn :bold t))))
+   `(org-headline-todo              ((t (:foreground ,fn))))
+   `(org-checkbox-statistics-todo   ((t (:foreground ,fn))))
+   `(org-done                       ((t (:foreground ,kw :bold t))))
+   `(org-headline-done              ((t (:foreground ,kw))))
+   `(org-checkbox-statistics-done   ((t (:foreground ,kw))))
+   `(org-data                       ((t (:foreground ,fn))))
 
    `(org-visual-indent-pipe-face       ((t (:height .1 :foreground ,fg :background ,fg))))
    `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground ,bg :background ,bg))))
@@ -253,20 +269,19 @@
    ;; ;; Treemacs
    ;; `(treemacs-root-face             ((t (:inherit font-lock-function-name-face :height 1.4 :underline t))))
    `(fill-column-indicator          ((t (:foreground ,dim))))
-   `(scroll-bar                     ((t (:foreground ,fg))))
+   `(scroll-bar                     ((t (:foreground ,fg :background ,bg))))
    `(parenthesis                    ((t (:foreground ,paren))))
    `(eldoc-box-body                 ((t (:background ,pop :inherit variable-pitch))))
 
+   `(lsp-flycheck-warning-unnecessary-face ((t (:underline (:color ,warn :style wave)))))
+   `(lsp-flycheck-info-unnecessary-face    ((t (:underline (:color ,err :style wave)))))
 
-   `(lsp-flycheck-warning-unnecessary-face ((t (:background ,warn))))
-   `(lsp-flycheck-info-unnecessary-face    ((t (:background ,warn))))
-
-   `(flycheck-info                  ((t (:background ,warn))))
-   `(flycheck-warning               ((t (:background ,warn))))
-   `(flycheck-error                 ((t (:background ,err))))
-   `(flymake-warning                ((t (:underline (:color ,warn :style wave) ))))
-   `(flymake-error                  ((t (:underline (:color ,err :style wave)))))
-   `(flymake-note                   ((t (:underline (:style wave :color ,dim)))))
+   `(flycheck-info                  ((t (:inherit warning))))
+   `(flycheck-warning               ((t (:inherit warning))))
+   `(flycheck-error                 ((t (:inherit error))))
+   `(flymake-warning                ((t (:inherit warning))))
+   `(flymake-error                  ((t (:inherit error))))
+   `(flymake-note                   ((t (:inherit error))))
 
    `(wgrep-face                     ((t (:underline ,st))))
 
@@ -338,7 +353,9 @@
    `(corfu-current ((t (:inverse-video t))))
    `(lsp-flycheck-info-unnecessary-face ((t (:underline (:color ,dim :style wave)))))
 
-   `(eglot-mode-line ((t (:foreground ,bg))))))
+   `(eglot-mode-line ((t (:foreground ,bg))))
+
+   `(cargo-process--error-face ((t (:inherit error))))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
