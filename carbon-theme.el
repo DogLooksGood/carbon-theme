@@ -115,8 +115,8 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,ml :foreground ,bg))))
-   `(mode-line-inactive             ((t (:background ,dim :foreground ,hl))))
+   `(mode-line                      ((t (:background ,ml :foreground ,bg :inherit variable-pitch-text))))
+   `(mode-line-inactive             ((t (:background ,dim :foreground ,hl :inherit variable-pitch-text))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -240,11 +240,11 @@
    `(org-document-title             ((t (:inherit variable-pitch-text))))
    `(org-link                       ((t (:underline t))))
    `(org-document-title             ((t ())))
-   `(org-code                       ((t (:inherit 'fixed-pitch-serif :foreground ,fn))))
-   `(org-block                      ((t (:inherit 'fixed-pitch-serif))))
-   `(org-table                      ((t (:inherit 'fixed-pitch))))
-   `(org-checkbox                   ((t (:inherit 'fixed-pitch :background unspecified :box nil))))
-   '(org-latex-and-related          ((t (:inherit 'fixed-pitch-serif))))
+   `(org-code                       ((t (:inherit fixed-pitch-serif :foreground ,fn))))
+   `(org-block                      ((t (:inherit fixed-pitch-serif))))
+   `(org-table                      ((t (:inherit fixed-pitch))))
+   `(org-checkbox                   ((t (:inherit fixed-pitch :background unspecified :box nil))))
+   '(org-latex-and-related          ((t (:inherit fixed-pitch-serif))))
    `(org-level-1                    ((t (:bold t :inherit font-lock-string-face :inherit variable-pitch-text))))
    `(org-level-2                    ((t (:bold t :inherit font-lock-function-name-face :inherit variable-pitch-text))))
    `(org-level-3                    ((t (:bold t :inherit font-lock-keyword-face :inherit variable-pitch-text))))
@@ -261,6 +261,9 @@
    `(org-headline-done              ((t (:foreground ,kw))))
    `(org-checkbox-statistics-done   ((t (:foreground ,kw))))
    `(org-data                       ((t (:foreground ,fn))))
+   `(org-block-begin-line           ((t (:inherit variable-pitch-text :foreground ,cmt))))
+   `(org-block-end-line             ((t (:inherit variable-pitch-text :foreground ,cmt))))
+
 
    `(org-visual-indent-pipe-face       ((t (:height .1 :foreground ,fg :background ,fg))))
    `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground ,bg :background ,bg))))
