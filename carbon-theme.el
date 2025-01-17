@@ -32,22 +32,24 @@
 
 (deftheme carbon "A minimal light theme.")
 
-(let ((bg "#202020")
-      (kw "#8B8B53")
-      (fg "#C5C5C5")
+(defcustom carbon-theme-use-bold nil
+  "Whether to use bold font.")
+
+(let ((bg "#211f17")
+      (kw "#99995d")
+      (fg "#c4c1be")
       (ml "#DCDCDC")
       (dim "#909090")
       (rg "#B4B4B4")
       (hl "#353535")
-      (lh "#d6b004")
-      (ss "#000000")
-      (cmt "#F68467")
-      (fn "#1BC440")
-      (st "#63B89B")
-      (paren "#878751")
-      (str "#249AD5")
+      (ss "#630303")
+      (cmt "#d88361")
+      (fn "#52c448")
+      (st "#a99ad1")
+      (paren "#99995d")
+      (str "#4db6ea")
       (num "#C39AD0")
-      (doc "#EE986A")
+      (doc "#d88361")
       (cur "#EFEFEF")
       (pop "#272727")
       (warn "#8B8B53")
@@ -76,7 +78,7 @@
    `(lazy-highlight                 ((t (:background ,hl :foreground ,fg))))
    `(compilation-info               ((t ())))
    `(compilation-warning            ((t ())))
-   `(warning;                        ((t ()))
+   `(warning                         ;                        ((t ()))
      )
    `(match                          ((t (:inverse-video t))))
    `(secondary-selection            ((t (:background ,ss :extend nil))))
@@ -115,8 +117,9 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,ml :foreground ,bg :inherit variable-pitch-text))))
-   `(mode-line-inactive             ((t (:background ,dim :foreground ,hl :inherit variable-pitch-text))))
+   `(mode-line                      ((t (:background ,ml :foreground ,bg :inherit variable-pitch))))
+   `(mode-line-inactive             ((t (:background ,dim :foreground ,hl :inherit variable-pitch))))
+   `(mode-line-buffer-id            ((t ())))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -160,8 +163,8 @@
    `(cider-test-error-face          ((t (:foreground "yellow" :inverse-video t))))
 
    ;; Clojure
-   `(clojure-character-face         ((t ())))
-   `(clojure-keyword-face         ((t (:foreground ,st))))
+   `(clojure-character-face            ((t ())))
+   `(clojure-keyword-face              ((t (:foreground ,st))))
 
    ;; Magit
    `(magit-branch-local                ((t (:foreground ,st))))
@@ -220,15 +223,16 @@
    `(web-mode-html-tag-bracket-face ((t (:inherit parenthesis))))
    `(web-mode-symbol-face           ((t ())))
    `(css-selector                   ((t ())))
+
    ;;
    ;; Markdown
-   `(markdown-header-face-1         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-2         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-3         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-4         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-5         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-6         ((t (:underline t :inherit variable-pitch-text))))
-   `(markdown-header-face-7         ((t (:underline t :inherit variable-pitch-text))))
+   `(markdown-header-face-1         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-2         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-3         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-4         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-5         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-6         ((t (:inherit variable-pitch-text))))
+   `(markdown-header-face-7         ((t (:inherit variable-pitch-text))))
    ;;
    ;; ;; Telega
    `(telega-entity-type-code        ((t ())))
@@ -245,28 +249,31 @@
    `(org-table                      ((t (:inherit fixed-pitch))))
    `(org-checkbox                   ((t (:inherit fixed-pitch :background unspecified :box nil))))
    '(org-latex-and-related          ((t (:inherit fixed-pitch-serif))))
-   `(org-level-1                    ((t (:bold t :inherit font-lock-string-face :inherit variable-pitch-text))))
-   `(org-level-2                    ((t (:bold t :inherit font-lock-function-name-face :inherit variable-pitch-text))))
-   `(org-level-3                    ((t (:bold t :inherit font-lock-keyword-face :inherit variable-pitch-text))))
-   `(org-level-4                    ((t (:bold t :inherit variable-pitch-text))))
-   `(org-level-5                    ((t (:bold t :inherit variable-pitch-text))))
-   `(org-level-6                    ((t (:bold t :inherit variable-pitch-text))))
-   `(org-level-7                    ((t (:bold t :inherit variable-pitch-text))))
+   `(org-level-1                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-2                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-3                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-4                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-5                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-6                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
+   `(org-level-7                    ((t (:bold ,carbon-theme-use-bold :inherit variable-pitch-text))))
    `(org-indent                     ((t (:inherit (fixed-pitch org-hide)))))
    `(org-drawer                     ((t (:foreground ,str))))
-   `(org-todo                       ((t (:foreground ,fn :bold t))))
+   `(org-todo                       ((t (:foreground ,fn :bold ,carbon-theme-use-bold))))
    `(org-headline-todo              ((t (:foreground ,fn))))
    `(org-checkbox-statistics-todo   ((t (:foreground ,fn))))
-   `(org-done                       ((t (:foreground ,kw :bold t))))
+   `(org-done                       ((t (:foreground ,kw :bold ,carbon-theme-use-bold))))
    `(org-headline-done              ((t (:foreground ,kw))))
    `(org-checkbox-statistics-done   ((t (:foreground ,kw))))
    `(org-data                       ((t (:foreground ,fn))))
-   `(org-block-begin-line           ((t (:inherit variable-pitch-text :foreground ,cmt))))
-   `(org-block-end-line             ((t (:inherit variable-pitch-text :foreground ,cmt))))
-
+   `(org-block-begin-line           ((t (:inherit variable-pitch :foreground ,cmt))))
+   `(org-block-end-line             ((t (:inherit variable-pitch :foreground ,cmt))))
+   `(org-date                       ((t (:underline t :inherit variable-pitch :foreground ,kw))))
+   `(org-scheduled-previously       ((t ())))
+   `(org-scheduled-today            ((t ())))
 
    `(org-visual-indent-pipe-face       ((t (:height .1 :foreground ,fg :background ,fg))))
    `(org-visual-indent-blank-pipe-face ((t (:height .1 :foreground ,bg :background ,bg))))
+
 
    ;;
    ;; ;; Treemacs
@@ -358,7 +365,13 @@
 
    `(eglot-mode-line ((t (:foreground ,bg))))
 
-   `(cargo-process--error-face ((t (:inherit error))))))
+   `(cargo-process--error-face ((t (:inherit error))))
+
+   `(sh-heredoc    ((t (:foreground ,st))))
+   `(envrc-mode-line-on-face ((t (:inherit nil))))
+   `(envrc-mode-line-none-face ((t (:inherit nil))))
+
+   `(which-func ((t (:inherit fixed-pitch))))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
