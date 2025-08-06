@@ -764,9 +764,9 @@
    `(window-divider ((t ())))
    `(window-divider-first-pixel ((t ())))
    `(window-divider-last-pixel ((t ())))
-   `(xref-file-header ((t ())))
+   `(xref-file-header ((t (:foreground ,green-1))))
    `(xref-line-number ((t ())))
-   `(xref-match ((t ())))
+   `(xref-match ((t (:foreground ,yellow-1))))
    `(yas--field-debug-face ((t ())))
    `(yas-field-highlight-face ((t ())))))
 
