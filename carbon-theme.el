@@ -41,7 +41,7 @@
 
 (deftheme carbon "A middle contrast theme for simplicity.")
 
-(let ((black    "#0C0A00")
+(let ((black    "#1C1A10")
       (gray     "#d1cfc9")
       (darkgray "#424242")
       (white    "#F0F0F0")
@@ -676,7 +676,7 @@
    `(shr-text ((t ())))
    `(smerge-base ((t ())))
    `(smerge-lower ((t ())))
-   `(smerge-markers ((t ())))
+   `(smerge-markers ((t (:background ,darkgray))))
    `(smerge-refine-shadow-cursor ((t ())))
    `(smerge-refined-added ((t ())))
    `(smerge-refined-changed ((t ())))
