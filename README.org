@@ -1,9 +1,16 @@
 #+title: Carbon Theme
 
-* A low contrast dark theme
+* Intro
 
-Since Only necessary elements are highlighted, it's better to lower the ~treesit-font-lock-level~.
+This theme prioritizes simplicity in design.
 
-#+begin_src emacs-lisp
-  (setq treesit-font-lock-level 2)
-#+end_src
+It highlights only static information, which, in my opinion,
+makes code easier to read. Too many colors can be distracting
+and are not ideal for everyday programming.
+
+All colors have similar contrast, ensuring no part of the text
+is overly stressed or ignored. Comments should be considered
+as important as the code itself.
+
+Unlike many modern themes, this theme avoids a bluish tint,
+as that can be stressful on the eyes.
