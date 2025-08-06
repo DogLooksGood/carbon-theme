@@ -39,9 +39,9 @@
 
 ;;; Code:
 
-(deftheme carbon "A minimal, low contrast dark theme.")
+(deftheme carbon "A middle contrast theme for simplicity.")
 
-(let ((black    "#211f17")
+(let ((black    "#0C0A00")
       (gray     "#d1cfc9")
       (darkgray "#424242")
       (white    "#F0F0F0")
@@ -320,6 +320,8 @@
    `(gnus-summary-normal-undownloaded ((t ())))
    `(gnus-summary-normal-unread ((t ())))
    `(gnus-summary-selected ((t ())))
+   `(gptel-context-deletion-face ((t ())))
+   `(gptel-context-highlight-face ((t (:background ,darkgray))))
    `(header-line ((t ())))
    `(header-line-active ((t ())))
    `(header-line-highlight ((t ())))
@@ -497,7 +499,7 @@
    `(mode-line-buffer-id ((t ())))
    `(mode-line-emphasis ((t ())))
    `(mode-line-highlight ((t ())))
-   `(mode-line-inactive ((t (:foreground ,silver :background ,darkgray))))
+   `(mode-line-inactive ((t (:foreground ,darkgray :background ,gray))))
    `(mouse ((t ())))
    `(mouse-drag-and-drop-region ((t ())))
    `(next-error ((t ())))
