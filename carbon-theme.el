@@ -38,10 +38,9 @@
 ;; as that can be stressful on the eyes.
 
 ;;; Code:
-
 (deftheme carbon "A middle contrast theme for simplicity.")
 
-(let ((black    "#1C1A10")
+(let ((black    "#1c1a10")
       (gray     "#d1cfc9")
       (darkgray "#424242")
       (white    "#F0F0F0")
@@ -329,7 +328,7 @@
    `(help-argument-name ((t ())))
    `(help-for-help-header ((t ())))
    `(help-key-binding ((t ())))
-   `(highlight ((t (:background ,darkgray))))
+   `(highlight ((t (:foreground ,black :background ,cyan-1))))
    `(highlight-numbers-number ((t (:inherit font-lock-number-face))))
    `(holiday ((t ())))
    `(homoglyph ((t ())))
@@ -362,7 +361,7 @@
    `(kmacro-menu-flagged ((t ())))
    `(kmacro-menu-mark ((t ())))
    `(kmacro-menu-marked ((t ())))
-   `(lazy-highlight ((t (:inherit highlight))))
+   `(lazy-highlight ((t (:foreground ,black :background ,cyan-1))))
    `(line-number ((t ())))
    `(line-number-current-line ((t ())))
    `(line-number-major-tick ((t ())))
