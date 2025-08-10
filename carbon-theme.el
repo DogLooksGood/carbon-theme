@@ -743,7 +743,7 @@
    `(vc-state-base ((t ())))
    `(vc-up-to-date-state ((t ())))
    `(vertical-border ((t ())))
-   `(vertico-current ((t (:foreground ,black :background ,gray))))
+   `(vertico-current ((t (:foreground ,cyan-1))))
    `(vertico-group-separator ((t ())))
    `(vertico-group-title ((t ())))
    `(vertico-multiline ((t ())))
